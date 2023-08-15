@@ -58,7 +58,6 @@ function fetchWeatherData(location) {
   fetch(apiUrl)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       // Update todays info
       const todayWeather = data.list[0].weather[0].description;
       const todayTemperature = `${Math.round(data.list[0].main.temp)}°C`;
@@ -96,7 +95,6 @@ function fetchWeatherData(location) {
 
       const dayInfoContainer = document.querySelector('.day-info');
       dayInfoContainer.innerHTML = `
-
             <div>
                 <span class="title">PRECIPITATION</span>
                 <span class="value">${todayPrecipitation}</span>
@@ -156,7 +154,7 @@ function fetchWeatherData(location) {
 
 // Fetch weather data on document load for default location (Germany)
 document.addEventListener('DOMContentLoaded', () => {
-  const defaultLocation = 'Germany';
+  const defaultLocation = 'Busan';
   fetchWeatherData(defaultLocation);
 });
 
