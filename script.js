@@ -58,6 +58,7 @@ function fetchWeatherData(location) {
   fetch(apiUrl)
     .then((response) => response.json())
     .then((data) => {
+      console.log(data);
       // Update todays info
       const todayWeather = data.list[0].weather[0].description;
       const todayTemperature = `${Math.round(data.list[0].main.temp)}°C`;
